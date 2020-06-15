@@ -1,0 +1,17 @@
+.homeContainer{
+  height: 95%;
+
+  background-image: url("../../assets/dragontail-9.22.1/img/champion/splash/Shaco_8.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 1500px;
+  h2,h3{
+    margin-top: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+  }
+}

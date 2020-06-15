@@ -1,0 +1,11 @@
+<mat-toolbar class="headerNav">
+  <span class="headerTitle">PorofessorLike</span>
+  <span id="rechercheContainer">
+    <input #summonerName id="inputSearch" type="text" name="searchSummoner" value="" placeholder="Recherche">
+    <input id="submitSearch" type="button" name="submitSearch" value="Rechercher" (click)="search(summonerName.value)">
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

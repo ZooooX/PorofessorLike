@@ -1,0 +1,78 @@
+<div class="summonersContainer">
+  <div class="gameMode">
+    <p>SoloQ</p>
+  </div>
+  <div class="miniContainer">
+    <div class="team" *ngIf="teamsready == true">
+      <mat-card class="summoner mat-elevation-z8" *ngFor="let summoner of team1">
+      <div class="summonerFront">
+        <img class="championImg" [src]="sanitizeImageUrl(summoner.championLoadingScreen)" alt="">
+        <div class="cardBottom index1">
+          <p class="index1 summonerName">{{summoner.summonerName}}</p>
+          <div class="imgs">
+            <img class="summonerIcon index1" [src]="sanitizeImageUrl(summoner.profileIcon)" alt="">
+            <span class="summonerSpells">
+              <img class="summonerSpell summonerSpell1 index1" [src]="sanitizeImageUrl(summoner.spell1Img)" alt="">
+              <img class="summonerSpell summonerSpell2 index1" [src]="sanitizeImageUrl(summoner.spell2Img)" alt="">
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="summonerBack">
+        <div class="innerSummonerBack">
+          <p class="index1 summonerName">{{summoner.summonerName}}</p>
+          <img class="summonerIcon index1" [src]="sanitizeImageUrl(summoner.profileIcon)" alt="">
+          <div class="soloRank index1">
+            <span *ngIf="getSummonerTier(summoner) != 'unranked'; then ranked1 else unranked1"></span>
+            <ng-template #ranked1><span class="">{{getSummonerTier(summoner)}} {{getSummonerRank(summoner)}}</span>
+              <div>{{getSummonerLeaguePoints(summoner)}} lps</div>
+
+              <div>Wins: {{getSummonerWins(summoner)}}</div>
+              <div>Losses: {{getSummonerLosses(summoner)}}</div>
+              <div>Win Rate : {{getSummonerWinRate(summoner)}} %</div>
+            </ng-template>
+            <ng-template #unranked1><span class="">UNRANKED</span></ng-template>
+          </div>
+        </div>
+      </div>
+      </mat-card>
+    </div>
+
+    <div class="team" *ngIf="teamsready == true">
+      <mat-card class="summoner mat-elevation-z8" *ngFor="let summoner of team2">
+        <div class="summonerFront">
+          <img class="championImg" [src]="sanitizeImageUrl(summoner.championLoadingScreen)" alt="">
+          <div class="cardBottom index1">
+            <p class="index1 summonerName">{{summoner.summonerName}}</p>
+            <div class="imgs">
+              <img class="summonerIcon index1" [src]="sanitizeImageUrl(summoner.profileIcon)" alt="">
+              <span class="summonerSpells">
+                <img class="summonerSpell summonerSpell1 index1" [src]="sanitizeImageUrl(summoner.spell1Img)" alt="">
+                <img class="summonerSpell summonerSpell2 index1" [src]="sanitizeImageUrl(summoner.spell2Img)" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="summonerBack">
+        <div class="innerSummonerBack">
+          <p class="index1 summonerName">{{summoner.summonerName}}</p>
+          <img class="summonerIcon index1" [src]="sanitizeImageUrl(summoner.profileIcon)" alt="">
+
+          <div class="soloRank index1">
+            <span *ngIf="getSummonerTier(summoner) != 'unranked'; then ranked2 else unranked2"></span>
+            <ng-template #ranked2><span class="">{{getSummonerTier(summoner)}} {{getSummonerRank(summoner)}}</span>
+              <div>{{getSummonerLeaguePoints(summoner)}} lps</div>
+              <div>Wins: {{getSummonerWins(summoner)}}</div>
+              <div>Losses: {{getSummonerLosses(summoner)}}</div>
+              <div>Win Rate : {{getSummonerWinRate(summoner)}} %</div>
+            </ng-template>
+            <ng-template #unranked2><span class="">UNRANKED</span></ng-template>
+
+          </div>
+        </div>
+      </div>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
